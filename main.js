@@ -31,7 +31,7 @@ const arrayA = [];
     document.getElementById("valorCuota").innerHTML = parrafo; 
     }
 const getPersona = () =>{
-    let id = arrayA.length;
+    let id = arrayA.length+1;
     let nombre = document.getElementById("nombre").value
     let edad = document.getElementById("edad").value
     let direccion = document.getElementById("direccion").value
