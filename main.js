@@ -9,6 +9,11 @@ class Persona{
         this.direccion  = direccion;
     }
 }
+function deleteRow(btn) {
+    
+    var row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
 const arrayA = [];
 
     const getValueP = () =>{
@@ -53,7 +58,7 @@ function Insert_Data() {
     var tr="";
     for (const Persona of arrayA) {
        tr+='<tr>';
-       tr+='<td>'+Persona.id+'</td>'+'<td>'+Persona.nombre+'</td>'+'<td>'+Persona.edad+'</td>'+'<td>'+Persona.direccion+'</td>'
+       tr+='<td>'+Persona.id+'</td>'+'<td>'+Persona.nombre+'</td>'+'<td>'+Persona.edad+'</td>'+'<td>'+Persona.direccion+'</td>'+'<td>'+'<button type="button" class="btn btn-danger" value="Delete" onclick="deleteRow(this)" >Eliminar</button>' +'</td>'
        tr+='</tr>'
   
     }
