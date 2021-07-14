@@ -11,6 +11,9 @@
     
 </head>
 <body>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+  <script src="jquery.dynamicTable-1.0.0.js"></script>
     
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="" class="text-dark text-decoration-none">
@@ -20,15 +23,17 @@
 
       
     </header>
-  
+    <script>
+      $(document).ready(function(){
+        alert('jQuery is up and running!');
+      });
+    </script>
     <div class="container ">
     <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Prestamo</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Agregar Persona</button>
-        </li>
+        
         <li class="nav-item" role="presentation">
           <button onclick="Insert_Data()" class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Registros</button>
         </li>
@@ -59,47 +64,19 @@
                  
                   <button onclick="getValueP()" type="button" class="btn btn-success">Calcular</button>
                 
-                  <p class="mt-4" id="valorCuota">ValorCuota</p>
+                  <p class="mt-4" id="valorCuota"></p>
                  
                   
                
                 
-                 
-                  <h4 class="text-center mt-5">"En cuantas cuotas desea realizarlo: hasta 12 cuotas (30% Interes), mas de 12 a 24 cuotas (50% Interes), mas de 24 a 36 cuotas (100% Interes)" </h3>
-                  <h1 class="text-center">Hola Mundo!</h1>
+                  <button class="btn btn-info" onclick="mostrarinfo()"> "Mas Informacion"
+                  <h4 id="info"class="text-center mt-5" style="display: none;">"En cuantas cuotas desea realizarlo: hasta 12 cuotas (30% Interes), mas de 12 a 24 cuotas (50% Interes), mas de 24 a 36 cuotas (100% Interes)" </h3>
+                  </button>
                 
                 <!-- prestamo aqui --></div>
         </div>
         
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="h2 text-center m-4">Agregar persona</div>
-            <div class="container">
-                <div class="row justify-content-center">
-
-                <div class="form-floating mb-3 col-xl-4">
-                <input type="text" class="form-control" id="nombre" placeholder="name@example.com">
-                <label for="floatingInput">Nombre</label>
-              </div>
-            </div>
-              <div class="row justify-content-center">
-              <div class="form-floating col-xl-4">
-                <input type="text" class="form-control " id="edad" placeholder="Password">
-                <label for="floatingPassword">Edad</label>
-              </div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="form-floating m-4 col-xl-4">
-                  <input type="text" class="form-control " id="direccion" placeholder="Password">
-                  <label for="floatingPassword">Direccion</label>
-                </div>
-                
-                </div>
-                <div class="row justify-content-center ">
-                  <button onclick="getPersona()" type="button" class="btn btn-success col-xl-4">Agregar Persona</button>
-                </div>
-            </div>
-            
-        </div>
+        
 
 
 
@@ -108,7 +85,7 @@
 
         </div>
         <div>
-        <table class="table">
+        <!-- <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -121,17 +98,26 @@
           <tbody id="datas">
             
           </tbody>
-        </table>
+        </table> -->
+        <div class="container" >
+          <div class="row">
+              <div class="col-lg-12">
+                  <table class="table" id="myTable"></table>
+  
+              </div>
+  
+          </div>
+  
+      </div>
         
         
       </div>
-      </div>
-      </div>
-    </div>
+        </div>
+        </div>
+        </div>
     
     
 
-    
-     <script src="main.js"></script>
+     
 </body>
 </html>

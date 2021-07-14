@@ -52,7 +52,7 @@ for (const Persona of arrayA) {
    
     
 }
-function Insert_Data() {
+/* function Insert_Data() {
     var table = document.getElementById("datas");
     table.innerHTML="";
     var tr="";
@@ -64,5 +64,67 @@ function Insert_Data() {
     }
     table.innerHTML+=tr;
     //Help......  
+  } */
+
+  const mostrarinfo =() =>{
+    $('#info').fadeToggle(1000);
+
   }
+  $(document).ready(function(){
+    $("#myTable").dynamicTable({
+    columns: [{
+            text: "Nombre",
+            key: "name"
+        },
+        {
+            text: "Edad",
+            key: "age"
+        },
+        {
+            text: "Genero",
+            key: "gender"
+        },
+    ],
+    data: [{
+            name: 'Oscar Nilson',
+            age: 30,
+            gender: 'M',
+        },
+        {
+            name: 'Juana del Monte',
+            age: 24,
+            gender: 'F',
+        },
+    ],
+        getControl: function (columnKey) {
+            if (columnKey == "age") {
+                return '<input type="number" class="form-control" />';
+            }
+      
+            if (columnKey == "gender") {
+                return '<select class="form-control"><option value="M">Male</option><option value="F">Female</option></select>';
+            }
+      
+            return '<input type="text" class="form-control" />';
+        },
+      
+
+      
+        showActionColumn: true,
+      
+      
+        buttons: {
+          addButton: '<button type="button" value="Add" class="btn btn-primary" style="background-color: #0d6efd;">Agregar</button>',
+          cancelButton: '<button type="button" value="Cancel" class="btn btn-primary" style="background-color: #dc3545;">Cancelar</button>',
+          deleteButton: '<button type="button" value="Delete" class="btn btn-danger" style="background-color: #dc3545;">Borrar</button>',
+          editButton: '<button type="button" value="Edit" class="btn btn-primary" style="background-color: #0d6efd;">Editar</button>',
+          saveButton: '<button type="button" value="Save" class="btn btn-success" style="background-color: #198754;">Guardar</button>',
+        },
+     
+      
+    });
+});
+let data = $("#myTable").getTableData();
+
+    
 
