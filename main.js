@@ -31,9 +31,16 @@ const arrayA = [];
             parrafo=(monto*2)/cuotas;
 
         }
-
-    
-    document.getElementById("valorCuota").innerHTML = parrafo; 
+        if(parrafo>0){
+             document.getElementById("valorCuota").innerHTML = Number(parrafo).toFixed(2); 
+             parrafo=0;
+             
+            }else{
+                console.log(parrafo);
+                parrafo=" ";
+                document.getElementById("valorCuota").innerHTML = parrafo;
+               
+            }
     }
 const getPersona = () =>{
     let id = arrayA.length+1;
@@ -128,3 +135,4 @@ let data = $("#myTable").getTableData();
 
     
 
+//validaciones
