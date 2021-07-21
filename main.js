@@ -1,7 +1,7 @@
 let parrafo;
 
 
-class Persona{
+/* class Persona{
     constructor(id,nombre, edad, direccion) {
         this.id = id;
         this.nombre = nombre;
@@ -14,7 +14,7 @@ function deleteRow(btn) {
     var row = btn.parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
-const arrayA = [];
+const arrayA = []; */
 
     const getValueP = () =>{
     let monto = parseInt( document.getElementById("montoSolicitar").value); 
@@ -42,7 +42,7 @@ const arrayA = [];
                
             }
     }
-const getPersona = () =>{
+/* const getPersona = () =>{
     let id = arrayA.length+1;
     let nombre = document.getElementById("nombre").value
     let edad = document.getElementById("edad").value
@@ -58,7 +58,7 @@ for (const Persona of arrayA) {
     let alerta = alert("  Nombre:  " + Persona.nombre + ".  Edad:  " + Persona.edad + ".  Direccion:  "+ Persona.calle + "\n");
    
     
-}
+} */
 /* function Insert_Data() {
     var table = document.getElementById("datas");
     table.innerHTML="";
@@ -105,23 +105,23 @@ for (const Persona of arrayA) {
     ],
         getControl: function (columnKey) {
             if (columnKey == "age") {
-                return '<input type="number" class="form-control" />';
+                return '<input id="caja2" type="number" class="form-control" value=0 />';
             }
       
             if (columnKey == "gender") {
                 return '<select class="form-control"><option value="M">Male</option><option value="F">Female</option></select>';
             }
       
-            return '<input type="text" class="form-control" />';
+            return '<input id="caja1" type="text" class="form-control" required="required"/>';
         },
       
 
       
         showActionColumn: true,
       
-      
+       
         buttons: {
-          addButton: '<button type="button" value="Add" class="btn btn-primary" style="background-color: #0d6efd;">Agregar</button>',
+          addButton: '<button id="btnEnviar" type="button" value="Add" class="btn btn-primary" style="background-color: #0d6efd;">Agregar</button>', 
           cancelButton: '<button type="button" value="Cancel" class="btn btn-primary" style="background-color: #dc3545;">Cancelar</button>',
           deleteButton: '<button type="button" value="Delete" class="btn btn-danger" style="background-color: #dc3545;">Borrar</button>',
           editButton: '<button type="button" value="Edit" class="btn btn-primary" style="background-color: #0d6efd;">Editar</button>',
@@ -130,9 +130,39 @@ for (const Persona of arrayA) {
      
       
     });
+    
+    var btnEnviar = document.getElementById("btnEnviar");
+    var caja1 = document.getElementById("caja1");
+    
+    btnEnviar.disabled = true;
+    
+    
+        caja1.addEventListener('keyup', function(){
+        btnEnviar.disabled = false;
+        });
+    
+        
+
+    
+    
+    btnEnviar.addEventListener("click", function(){
+        btnEnviar.disabled = true;
+    }); 
+    
+
+    
+
+
+
+          
+   
+
+    
 });
 let data = $("#myTable").getTableData();
 
+
+    
     
 
 //validaciones
